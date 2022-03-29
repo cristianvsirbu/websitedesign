@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="width: 100%; height: 600px; border: solid 3px red" onload="salut()" onclick="countClicks()">
+    <p id="num_of_clicks">0</p>
+    <textarea name="" id="" cols="30" rows="10" placeholder="textarea demo">
+
+    </textarea>
+
+
+
+    <script>
+        // functie care intreaba daca sigur iesi de pe pagina
+        window.addEventListener("beforeunload", (event) => {
+            event.preventDefault();
+            event.returnValue = "";
+        });
+
+        function salut() {
+                alert("Bine ai venit")
+            }
+        // functie care numara clicurile de mouse
+        var counter = 0;
+        function countClicks() {
+            counter = counter + 1;
+            document.getElementById("num_of_clicks").innerHTML = "Number of Mouse CLicks: " + counter;
+        }
+    </script>
+</body>
+
+</html>
